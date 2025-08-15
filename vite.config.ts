@@ -4,20 +4,8 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: path.resolve(__dirname, 'frontend'),
   build: {
-    outDir: path.resolve(__dirname, 'frontend/build'),
-    emptyOutDir: true,
+    outDir: 'build'
   },
-  server: {
-    port: 3000,
-    hmr: {
-      host: 'localhost',
-    },
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'frontend/src'),
-    },
-  },
+  root: path.resolve(__dirname, 'public'), // <<<< CORREÇÃO AQUI
 });
